@@ -1,0 +1,124 @@
+.bgColor{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to right, #e0f7fa, #80deea);
+    background: linear-gradient(to right, #e0f7fa, #252626);
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 2rem; */
+  /* gap: 3rem; */
+}
+
+.topHeader{
+  font-family: "Funnel Display", sans-serif;
+  font-size: 6rem;
+  color: rgb(32, 32, 32);
+  margin-top: 3rem;
+}
+
+.signIn{
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-top: 2rem;
+}
+
+.signIn label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+}
+
+.signIn input {
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.Btn {
+  background-color: #0288d1;
+  color: white;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.Btn:hover {
+  background-color: #0277bd;
+}
+
+.googleSign:hover{
+    color: blue;
+}
+
+.dupError {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+  background-color: #f44336; 
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.4s ease forwards;
+
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+@keyframes slideDown {
+  to {
+    transform: translateX(-50%) translateY(20px);
+  }
+}
+
+.closeErr{
+  cursor: pointer;
+  color: rgb(52, 3, 3);
+}
+
+.gglsignDiv{
+  height: 3rem;
+  background-color: #b0bbbd;
+  color: black;
+  padding: 10px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid blue;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-top: 3rem;
+}
+
+.googleLogo{
+  object-fit: contain;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+}
