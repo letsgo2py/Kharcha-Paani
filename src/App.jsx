@@ -38,8 +38,6 @@ function App() {
           setLogged(false)
         }else{
           setUser(res.data.user); // or setAuthenticated(true)
-          console.log(res.data.user)
-          console.log("User data: ", user)
           setUserId(res.data.user._id)
           setLogged(true)
         }
@@ -49,11 +47,13 @@ function App() {
         setUser(null);
         setCheckingAuth(false);
         setLogged(false)
+      })
+       .finally(() => {
+        setCheckingAuth(false);
       });
     }
 
   useEffect(() => {
-    console.log("CheckAuth calling/..")
     checkAuth();
   }, []);
 
