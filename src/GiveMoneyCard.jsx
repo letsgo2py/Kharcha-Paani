@@ -1,34 +1,34 @@
 import React from 'react'
 
-const handleBox = async () => {
-  try {
-    const response = await fetch(`${import.meta.env.VITE_BACKEND_DOMAIN}/user/${id}/mark`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ marked: true }),
-      credentials: 'include'  // send the cookie
-    });
-
-    if (!response.ok) {
-      throw new Error('Failed to update');
-    }
-
-    const data = await response.json();
-    refreshData();
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-function GiveMoneyCard({ id, Amt, GiveTo, Date, Interest, Period, Reason, setReminderForm, setIdToDelete }) {
+function GiveMoneyCard({ id, Amt, GiveTo, Date, Interest, Period, Reason, setReminderForm, setIdToDelete, refreshData }) {
 
   const handleDeletion = () => {
     if (window.confirm('Are you sure you want to delete this entry?')) {
       setIdToDelete(id);
     }
   }
+
+  const handleBox = async () => {
+    try {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_DOMAIN}/user/${id}/mark`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ marked: true }),
+        credentials: 'include'  // send the cookie
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to update');
+      }
+
+      const data = await response.json();
+      refreshData();
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <div className='take-money-card give-money-card'>

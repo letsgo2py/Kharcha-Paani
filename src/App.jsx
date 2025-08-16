@@ -34,7 +34,7 @@ function App() {
 
   const navigate = useNavigate();
 
-  const checkAuth = () => {
+  const checkAuth = async () => {
     return axios.get(`${import.meta.env.VITE_BACKEND_DOMAIN}/user/verify`, { withCredentials: true })
       .then((res) => {
         if(res.data.message === 'Not authenticated'){
@@ -62,7 +62,9 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (logged && location.pathname !== '/') {
+    const publicRoutes = ['/', '/register', '/login']; // allowed without auth
+
+    if (!logged && !publicRoutes.includes(location.pathname)) {
       navigate('/');
     }
   }, [logged, location.pathname]);
@@ -90,7 +92,7 @@ function App() {
         logged ? (
           <>
             <Navbar logged={true} setLogged={setLogged}/>
-            <History userId={userId} />
+            <History />
           </>
         ) : (
           <FreshHome />

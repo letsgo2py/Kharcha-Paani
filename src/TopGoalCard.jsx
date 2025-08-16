@@ -45,13 +45,28 @@ function GoalCard() {
 
   return (
     <div className='goal-card card'>
+      <div>
+        <p className='card-header'>Goal</p>
+        <input 
+          type="text" 
+          placeholder="Enter your goal"
+          value={goalData.goal}
+          onChange={(e) => setGoalData({ ...goalData, goal: e.target.value })}
+          onFocus={(e) => (e.target.style.borderBottom = '2px solid #121313ff')}
+          onBlur={(e) => {
+            e.target.style.borderBottom = '2px solid #ccc';
+            handleBlur();
+          }} 
+        />
+      </div>
+      <div className="goal-secondRow">
         <div>
-          <p className='card-header'>Goal</p>
+          <p>Time period: </p>
           <input 
             type="text" 
-            placeholder="Enter your goal"
-            value={goalData.goal}
-            onChange={(e) => setGoalData({ ...goalData, goal: e.target.value })}
+            placeholder="Time to buy"
+            value={goalData.time}
+            onChange={(e) => setGoalData({ ...goalData, time: e.target.value })}
             onFocus={(e) => (e.target.style.borderBottom = '2px solid #121313ff')}
             onBlur={(e) => {
               e.target.style.borderBottom = '2px solid #ccc';
@@ -59,36 +74,21 @@ function GoalCard() {
             }} 
           />
         </div>
-        <div className="goal-secondRow">
-          <div>
-            <p>Time period: </p>
-            <input 
-              type="text" 
-              placeholder="Time to buy"
-              value={goalData.time}
-              onChange={(e) => setGoalData({ ...goalData, time: e.target.value })}
-              onFocus={(e) => (e.target.style.borderBottom = '2px solid #121313ff')}
-              onBlur={(e) => {
-                e.target.style.borderBottom = '2px solid #ccc';
-                handleBlur();
-              }} 
-            />
-          </div>
-          <div>
-            <p>Estimated Cost: </p>
-            <input 
-              type="text" 
-              placeholder="How much"
-              value={goalData.cost}
-              onChange={(e) => setGoalData({ ...goalData, cost: e.target.value })}
-              onFocus={(e) => (e.target.style.borderBottom = '2px solid #121313ff')}
-              onBlur={(e) => {
-                e.target.style.borderBottom = '2px solid #ccc';
-                handleBlur();
-              }} 
-            />
-          </div>
+        <div>
+          <p>Estimated Cost: </p>
+          <input 
+            type="text" 
+            placeholder="How much"
+            value={goalData.cost}
+            onChange={(e) => setGoalData({ ...goalData, cost: e.target.value })}
+            onFocus={(e) => (e.target.style.borderBottom = '2px solid #121313ff')}
+            onBlur={(e) => {
+              e.target.style.borderBottom = '2px solid #ccc';
+              handleBlur();
+            }} 
+          />
         </div>
+      </div>
     </div>
   )
 }

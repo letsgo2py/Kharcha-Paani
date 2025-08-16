@@ -7,7 +7,7 @@ import TopGoalCard from './TopGoalCard'
 function Cards({ User }) {
   return (
     <div className='cards'>
-        <BalanceCard User={User}/>
+        <BalanceCard />
         <ExpenseCard />
         <TopGoalCard />
     </div>

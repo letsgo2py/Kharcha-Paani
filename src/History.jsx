@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react'
 
 import HistoryCard from './HistoryCard'
 
-function History({ userId }) {
+function History() {
   const [historyData, setHistoryData] = useState([])
 
   useEffect(() => {
-    // Define the async function inside useEffect
     const fetchHistory = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_DOMAIN}/user/history/${userId}`, {
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_DOMAIN}/user/history`, {
           method: 'GET',
           credentials: 'include' // send cookies 
         });
@@ -27,13 +26,13 @@ function History({ userId }) {
     };
 
     fetchHistory();
-  }, [userId]); 
+  }, []); 
 
   return (
     <div className='history-div'>
       <h1>History</h1>
       {historyData.length === 0 ? (
-        <p>No History.</p>
+        <h1>No History.</h1>
       ) : (
         historyData.map(dt => (
           <HistoryCard key={dt._id} data={dt} />

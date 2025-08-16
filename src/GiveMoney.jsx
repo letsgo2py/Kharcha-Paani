@@ -80,7 +80,7 @@ function GiveMoney({ userId, refreshData, refreshFlag}) {
       )}
       {AllData && 
         AllData.map((data) => (
-          <GiveMoneyCard key={data._id} id={data._id} Amt={data.amount} GiveTo={data.giveTo} Date={data.date} Interest={data.interest} Period={data.interestPeriod} Reason={data.reason} setReminderForm={setReminderForm} setIdToDelete={setIdToDelete}/>
+          <GiveMoneyCard key={data._id} id={data._id} Amt={data.amount} GiveTo={data.giveTo} Date={data.date} Interest={data.interest} Period={data.interestPeriod} Reason={data.reason} setReminderForm={setReminderForm} setIdToDelete={setIdToDelete} refreshData={refreshData}/>
       ))}
       {(AllData && AllData.length === 0) && (
         <p className='no-data-msg'>Add the Entry.</p>
