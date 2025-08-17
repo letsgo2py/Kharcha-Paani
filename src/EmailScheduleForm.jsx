@@ -5,7 +5,6 @@ function ScheduleEmailForm({ setReminderForm }) {
     const [reminderTime, setReminderTime] = useState(null)
 
     const handleSchedule = async (e) => {
-      console.log("handle called")
       e.preventDefault(); 
 
       try {

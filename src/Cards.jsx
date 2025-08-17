@@ -4,7 +4,7 @@ import BalanceCard from './BalanceCard'
 import ExpenseCard from './ExpenseCard'
 import TopGoalCard from './TopGoalCard'
 
-function Cards({ User }) {
+function Cards() {
   return (
     <div className='cards'>
         <BalanceCard />

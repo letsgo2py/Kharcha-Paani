@@ -92,7 +92,7 @@
 }
 
 .goal-card{
-    background: linear-gradient(135deg, #ff9a9e, #fecfef);
+    background: linear-gradient(135deg, #c49698, #fecfef) !important;
     height: 14rem;
     width: 30%;
     display: flex;
@@ -236,6 +236,12 @@
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+/* Ensure goal-card gradient takes precedence */
+.card.goal-card {
+  background: linear-gradient(135deg, #ff9a9e, #fecfef) !important;
+  padding: 1rem;
 }
 
 .expense-container {
