@@ -1,4 +1,5 @@
-# 💰 Money Management App
+# 💰 Kharcha Paani (Money Management App) 
+Live Demo : https://kharcha-paani-frontend.netlify.app/
 
 A comprehensive personal finance management application built with React and Node.js.
 
@@ -152,11 +153,6 @@ my-money-app/
 
 *Clean and intuitive home dashboard with balance overview and quick actions*
 
-### 📊 Main Dashboard
-![Main Dashboard](./src/assets/first-page.png)
-
-*Comprehensive dashboard showing financial overview, charts, and transaction summaries*
-
 ### 💳 Transactions Management
 ![Transactions](./src/assets/transactions.png)
 
@@ -166,40 +162,6 @@ my-money-app/
 ![Goals Section](./src/assets/goal-sec.png)
 
 *Goal setting and tracking interface with progress visualization*
-
----
-
-## 🔥 **Feature Overview**
-
-| Feature | Description | Screenshot |
-|---------|-------------|------------|
-| 🏠 **Home Dashboard** | Quick overview with balance and shortcuts | [View](./src/assets/home-page.png) |
-| 📊 **Analytics** | Detailed charts and financial insights | [View](./src/assets/first-page.png) |
-| 💳 **Transactions** | Complete transaction management system | [View](./src/assets/transactions.png) |
-| 🎯 **Goals** | Set, track, and achieve financial goals | [View](./src/assets/goal-sec.png) |
-
-### 🎮 **Interactive Demo**
-Experience the app's key features:
-1. **Dashboard** → Real-time balance and transaction overview
-2. **Transactions** → Add, edit, and categorize your financial records  
-3. **Goals** → Set targets and track your progress
-4. **Analytics** → Visualize your spending patterns and trends
-
-## 🤝 Contributing
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Author
-
-**Abhra** - *Full Stack Developer*
 
 ---
 

@@ -102,7 +102,7 @@ function App() {
         logged ? (
           <>
             <Navbar logged={true} setLogged={setLogged}/>
-            <Profile userId={userId} user={user}/>
+            <Profile user={user}/>
           </>
         ) : (
           <FreshHome />
