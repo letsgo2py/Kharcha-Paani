@@ -5,6 +5,11 @@
     width: 100vw;
     background: linear-gradient(to right, #e0f7fa, #80deea);
     background: linear-gradient(to right, #e0f7fa, #252626);
+    background-image: url('/Money_BG.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
     /* display: flex;
     flex-direction: column;
@@ -19,6 +24,7 @@
   align-items: center;
   /* margin-top: 2rem; */
   /* gap: 3rem; */
+  
 }
 
 .topHeader{

@@ -6,7 +6,7 @@ function Loader() {
   return (
     <div className={Styles['loader-div']}>
         <div className={Styles.loader}></div>
-        <p>Wait...We are fetching your details</p>
+        <p>Hold Tight... Preparing some awesome stuff for you</p>
     </div>
   )
 }

@@ -17,6 +17,11 @@ function TakeMoney({ userId, refreshData, refreshFlag}) {
 
   const [AllData, setAllData] = useState([])
   const [reminderForm, setReminderForm] = useState(false);
+  const [reminderFormData, setReminderFormData] = useState({
+    amount: '',
+    takeFrom: '',
+    date: ''
+  });
   const [showAll, setShowAll] = useState(false);
 
 
@@ -84,12 +89,12 @@ function TakeMoney({ userId, refreshData, refreshFlag}) {
       )}
       {reminderForm && (
         <div className="overlayForm">
-          <ScheduleEmailForm setReminderForm={setReminderForm}/>
+          <ScheduleEmailForm setReminderForm={setReminderForm} reminderFormData={reminderFormData} type='take'/>
         </div>
       )}
       {AllData && 
         AllData.slice(0, 6).map((data) => (
-          <TakeMoneyCard key={data._id} id={data._id} Amt={data.amount} TakeFrom={data.takeFrom} Date={data.date} Interest={data.interest} Period={data.interestPeriod} Reason={data.reason} setReminderForm={setReminderForm} setIdToDelete={setIdToDelete} refreshData={refreshData}/>
+          <TakeMoneyCard key={data._id} id={data._id} Amt={data.amount} TakeFrom={data.takeFrom} Date={data.date} Interest={data.interest} Period={data.interestPeriod} Reason={data.reason} setReminderForm={setReminderForm} setReminderFormData={setReminderFormData} setIdToDelete={setIdToDelete} refreshData={refreshData}/>
       ))}
       {AllData.length > 6 && (
         <p

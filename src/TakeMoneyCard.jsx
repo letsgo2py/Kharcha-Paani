@@ -1,6 +1,6 @@
 import React from 'react'
 
-function TakeMoneyCard({ id, Amt, TakeFrom, Date, Interest, Period, Reason, setReminderForm, setIdToDelete, refreshData }) {
+function TakeMoneyCard({ id, Amt, TakeFrom, Date, Interest, Period, Reason, setReminderForm, setReminderFormData, setIdToDelete, refreshData }) {
     // const { amount, takeFrom, tookOn, interest, interestPeriod, reason } = props.formData || {};
     // const HaveDate = tookOn ? true : false;
     // const HaveInterest = interest ? true : false;
@@ -43,6 +43,15 @@ function TakeMoneyCard({ id, Amt, TakeFrom, Date, Interest, Period, Reason, setR
       }
     };
 
+  const handleReminder = () => {
+    setReminderForm(true);
+    setReminderFormData({
+      amount: Amt,
+      takeFrom: TakeFrom,
+      date: Date.slice(0, 10),
+    })
+  }
+
   return (
     <div className='take-money-card'>
       <div className='checkbox-div'>
@@ -53,7 +62,7 @@ function TakeMoneyCard({ id, Amt, TakeFrom, Date, Interest, Period, Reason, setR
       {Interest && <p>📈 Interest: {Interest}%, {Period}</p>}
       {Reason && <p>🤔 <span>Reason:</span> <span style={{fontSize: '1rem', fontStyle: 'italic', padding: 0, backgroundColor: 'white'}}>"{Reason}"</span></p>}
       <div className='reminder-div' >
-        <i className="bi bi-alarm" onClick={() => {setReminderForm(true)}}></i>
+        <i className="bi bi-alarm" onClick={handleReminder}></i>
         <i className="bi bi-trash" onClick={handleDeletion}></i>
       </div>
     </div>

@@ -46,7 +46,8 @@ function GoalCard() {
   return (
     <div className='goal-card card'>
       <div>
-        <p className='card-header'>Goal</p>
+        <p className='card-header top-goal-card-header'>Top</p>
+        <p className='card-header top-goal-card-header'>Goal</p>
         <input 
           type="text" 
           placeholder="Enter your goal"

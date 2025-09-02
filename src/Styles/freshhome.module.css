@@ -5,6 +5,11 @@
     width: 100vw;
     background: linear-gradient(to right, #e0f7fa, #80deea);
     background: linear-gradient(to right, #e0f7fa, #252626);
+    background-image: url('/Money_BG.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
 }
 
@@ -15,21 +20,19 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-
+    
 }
 
 .heading{
     /* color: rgb(90, 90, 167); */
     color: black;
-    font-size: 5rem;
     margin-top: 2rem;
     font-family: "Manrope", sans-serif;
 }
 
 .subheading{
     margin-top: 1rem;
-    /* color: rgb(93, 91, 91); */
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(4, 15, 20, 0.6);
 }
 
 .Startbtn{

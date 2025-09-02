@@ -30,9 +30,13 @@ function History() {
 
   return (
     <div className='history-div'>
-      <h1>History</h1>
+      <h1>Transaction History</h1>
       {historyData.length === 0 ? (
-        <h1>No History.</h1>
+        <div className='no-history-msg'>
+          <div className='no-history-icon'>📊</div>
+          <h2>No Transaction History</h2>
+          <p>Your transaction history will appear here once you start recording your money activities.</p>
+        </div>
       ) : (
         historyData.map(dt => (
           <HistoryCard key={dt._id} data={dt} />

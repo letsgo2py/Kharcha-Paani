@@ -18,7 +18,11 @@ function GiveMoney({ userId, refreshData, refreshFlag}) {
 
   const [AllData, setAllData] = useState(null);
   const [reminderForm, setReminderForm] = useState(false);
-  
+  const [reminderFormData, setReminderFormData] = useState({
+    amount: '',
+    giveTo: '',
+    date: ''
+  });
   const [IdToDelete, setIdToDelete] = useState(null);
   
   useEffect(() => {
@@ -75,12 +79,12 @@ function GiveMoney({ userId, refreshData, refreshFlag}) {
       )}
       {reminderForm && (
         <div className="overlayForm">
-          <ScheduleEmailForm setReminderForm={setReminderForm}/>
+          <ScheduleEmailForm setReminderForm={setReminderForm} reminderFormData={reminderFormData} type='give'/>
         </div>
       )}
       {AllData && 
         AllData.map((data) => (
-          <GiveMoneyCard key={data._id} id={data._id} Amt={data.amount} GiveTo={data.giveTo} Date={data.date} Interest={data.interest} Period={data.interestPeriod} Reason={data.reason} setReminderForm={setReminderForm} setIdToDelete={setIdToDelete} refreshData={refreshData}/>
+          <GiveMoneyCard key={data._id} id={data._id} Amt={data.amount} GiveTo={data.giveTo} Date={data.date} Interest={data.interest} Period={data.interestPeriod} Reason={data.reason} setReminderForm={setReminderForm} setReminderFormData={setReminderFormData} setIdToDelete={setIdToDelete} refreshData={refreshData}/>
       ))}
       {(AllData && AllData.length === 0) && (
         <p className='no-data-msg'>Add the Entry.</p>

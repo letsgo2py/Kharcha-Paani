@@ -17,7 +17,6 @@ function Navbar({logged, setLogged }) {
         const data = await res.json();
         setLogged(false);
         navigate('/'); 
-        console.log(data.message)
     })
     .catch(err => console.error('Error:', err));
   }

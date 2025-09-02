@@ -15,7 +15,7 @@ function FreshHome() {
     <div className = {Styles.Homepage}>
       <Navbar logged={false}/>
       <div className={Styles.container}>
-          <h1 className={Styles.heading}>Have Full Control On Your Money</h1>
+          <h1 className={`${Styles.heading} text-[60px] lg:text-[80px]`}>Have Full Control On Your Money</h1>
           <div>
           <h3 className={Styles.subheading}>Manage your money at one place and let your worries go away.</h3>
           <h3 className={Styles.subheading}>Be Smart. Be more focused. Be more Productive.</h3>

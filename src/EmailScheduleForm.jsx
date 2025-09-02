@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function ScheduleEmailForm({ setReminderForm }) {
+function ScheduleEmailForm({ setReminderForm, reminderFormData, type }) {
     const [email, setEmail] = useState(null)
     const [reminderTime, setReminderTime] = useState(null)
 
@@ -14,7 +14,7 @@ function ScheduleEmailForm({ setReminderForm }) {
           body: JSON.stringify({
             to: email,
             subject: 'Money Reminder',
-            text: 'Reminder: You took some money.',
+            text: type === 'give' ? reminderFormData.date ? `This is the Reminder that you took ₹${reminderFormData.amount} from ${reminderFormData.giveTo} on ${reminderFormData.date}.` : `This is the Reminder that you took ₹${reminderFormData.amount} from ${reminderFormData.giveTo}.` : reminderFormData.date ? `This is the Reminder that you gave ₹${reminderFormData.amount} to ${reminderFormData.takeFrom} on ${reminderFormData.date}.` : `This is the Reminder that you gave ₹${reminderFormData.amount} to ${reminderFormData.takeFrom}.`,
             datetime: reminderTime
           }),
           credentials: 'include'

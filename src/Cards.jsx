@@ -7,9 +7,9 @@ import TopGoalCard from './TopGoalCard'
 function Cards() {
   return (
     <div className='cards'>
-        <BalanceCard />
-        <ExpenseCard />
-        <TopGoalCard />
+      <BalanceCard />
+      <ExpenseCard />
+      <TopGoalCard />
     </div>
   )
 }

@@ -29,14 +29,15 @@
     margin: 3rem 0;
 }
 
-.body div{
+.profileSection{
     /* grow, shrink, and minimum width */
     flex: 1 1 280px; 
-    max-width: 300px;
-    height: 150px;
+    max-width: 350px;
+    min-height: 200px;
     border: 2px solid rgb(49, 114, 235);
     padding: 20px;
-    text-align: center;
     border-radius: 12px;
-    font-size: 1.8rem;
+    font-size: 1rem;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }

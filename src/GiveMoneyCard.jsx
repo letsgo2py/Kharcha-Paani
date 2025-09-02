@@ -1,6 +1,6 @@
 import React from 'react'
 
-function GiveMoneyCard({ id, Amt, GiveTo, Date, Interest, Period, Reason, setReminderForm, setIdToDelete, refreshData }) {
+function GiveMoneyCard({ id, Amt, GiveTo, Date, Interest, Period, Reason, setReminderForm, setReminderFormData, setIdToDelete, refreshData }) {
 
   const handleDeletion = () => {
     if (window.confirm('Are you sure you want to delete this entry?')) {
@@ -30,6 +30,15 @@ function GiveMoneyCard({ id, Amt, GiveTo, Date, Interest, Period, Reason, setRem
     }
   };
 
+  const handleReminder = () => {
+    setReminderForm(true);
+    setReminderFormData({
+      amount: Amt,
+      giveTo: GiveTo,
+      date: Date.slice(0, 10),
+    })
+  }
+
   return (
     <div className='take-money-card give-money-card'>
       <div className='checkbox-div'>
@@ -40,7 +49,7 @@ function GiveMoneyCard({ id, Amt, GiveTo, Date, Interest, Period, Reason, setRem
       {Interest && <p>📈 Interest: {Interest}%, {Period}</p>}
       {Reason && <p>🤔 <span>Reason:</span> <span style={{fontSize: '1rem', fontStyle: 'italic', padding: 0, backgroundColor: 'white'}}>"{Reason}"</span></p>}
       <div className='reminder-div' >
-        <i className="bi bi-alarm" onClick={() => {setReminderForm(true)}}></i>
+        <i className="bi bi-alarm" onClick={handleReminder}></i>
         <i className="bi bi-trash" onClick={handleDeletion}></i>
       </div>
     </div>
